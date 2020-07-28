@@ -163,7 +163,7 @@
     <a href="index3.html" class="brand-link navbar-primary">
       <img src="<?php echo base_url();?>asset/adminlte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">Andal Logistik</span>
+      <span class="brand-text font-weight-light">Setia Samudera Abadi</span>
     </a>
 
     <!-- Sidebar -->
@@ -204,10 +204,15 @@
                 
               <div class="card-body">
                 <div class="row">
-                  <div class="form-group col-sm-12">
+                  <div class="form-group col-sm-6">
                     <span class="fa fa-pen"></span>
                     <label for="exampleInputEmail1">Nama Shipper</label>
-                    <input type="email" class="form-control" id="nama_shipper" name="nama_shipper" placeholder="Shipper" required="">
+                    <input type="text" class="form-control" id="nama_shipper" name="nama_shipper" placeholder="Shipper" required="">
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <span class="fa fa-pen"></span>
+                    <label for="exampleInputEmail1">Consumerime good</label>
+                    <input type="text" class="form-control" id="con_good" name="con_good" placeholder="good" required="">
                   </div>
                   <div class="form-group col-sm-6">
                     <span class="fa fa-pen"></span>
@@ -260,9 +265,14 @@
                     <input type="text" class="form-control" id="container_detail" name="container_detail" placeholder="Container">
                   </div>
                   <div class="form-group col-sm-6">
-                    <span class="fa fa-pen"></span>
+                    <span class="fa fa-truck"></span>
                     <label for="exampleInputPassword1">No Container</label>
                     <input type="text" class="form-control" id="container_no" name="container_no" placeholder="Container number">
+                  </div>
+                   <div class="form-group col-sm-1">
+                    <span class="fa fa-percent"></span>
+                    <label for="exampleInputPassword1">Percent</label>
+                    <input type="text" class="form-control" id="persen" name="persen" value="1">
                   </div>
                 <!-- /.card-body -->
 
@@ -318,7 +328,7 @@
               <input name="sub_total" id="sub_total" type="text" style="text-align: right;" class="form-control" placeholder="sub_total" readonly>
             </div>
             <div class="form-group col-xs-12">
-              <label>VAT 1%</label>
+              <label>VAT</label>
               <input name="vat" id="vat" type="text" style="text-align: right;" class="form-control" placeholder="vat" readonly>
             </div>
             <div class="form-group col-xs-12">
@@ -480,6 +490,7 @@ $(document).ready(function() {
     var price = $('#price-' + i).val();
     var totNumber = (unit * price);
     var tot = totNumber.toFixed(2);
+    var Percentege = $('#persen').val(); 
     $('#amount-' + i).val(tot);
 
    //////
@@ -493,7 +504,7 @@ $(document).ready(function() {
 
    $("#sub_total").val(sum); // Storing the values
    
-   var vat = 1/100 * sum;
+   var vat = Percentege/100 * sum; //persen
    $('#vat').val(vat);
 
    var all_total = sum + vat;

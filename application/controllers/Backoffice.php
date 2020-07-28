@@ -6,10 +6,11 @@ class Backoffice extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		{
+		
 
-			$this->load->model('Backoffice_model');
-		}
+		$this->load->model('Backoffice_model');
+			
+		
 
 	}
 
@@ -20,7 +21,7 @@ class Backoffice extends CI_Controller {
 		$data = array(
 
 			"title" => "BackOffice",
-			"breadcrumb" => "Dashboard Andal"
+			"breadcrumb" => "Dashboard Setia Samudera Abadi"
 
 		);
 
@@ -34,7 +35,7 @@ class Backoffice extends CI_Controller {
 		$data = array(
 
 			"title" => "Invoice",
-			"breadcrumb" => "Invoice Andal"
+			"breadcrumb" => "Invoice Setia Samudera Abadi"
 
 		);
 
@@ -43,7 +44,7 @@ class Backoffice extends CI_Controller {
 
 	}
 
-	public function client()
+	public function Client()
 	{
 
 		$data = array(
@@ -84,6 +85,15 @@ class Backoffice extends CI_Controller {
 
 		$no_id = $this->uri->segment(3);
 
+
+	}
+
+	Public function no_surat()
+	{
+		$bulan = date('n');
+		$tahun = date ('Y');
+		$nomor = "/SPT/".$bulan."/".$tahun;
+		return $nomor;
 
 	}
 

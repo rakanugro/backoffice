@@ -55,7 +55,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?php echo base_url(); ?>BackOffice/Client " class="nav-link">
+                <a href="<?php echo site_url(); ?>Backoffice/Client " class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Client</p>
                 </a>
@@ -85,7 +85,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?php echo base_url();?>BackOffice/Invoice " class="nav-link">
+                <a href="<?php echo site_url(); ?>Backoffice/Invoice" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Input Invoice</p>
                 </a>
